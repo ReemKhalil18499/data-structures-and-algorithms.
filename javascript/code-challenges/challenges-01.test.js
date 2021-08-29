@@ -1,3 +1,5 @@
+
+
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
@@ -42,18 +44,15 @@ Write a function named `allUpperCase` that takes an array of strings, and return
 
 Use `forEach` to loop over the input array. The modified strings should each be added into a local array. Return that local array.
 ------------------------------------------------------------------------------------------------ */
-const greeting = (word) => {
-  const stringWord = word.toUpperCase() + "!";
-  return stringWord;
+
+const allUpperCase = (arr) => {
+  const StringArr = [];
+  arr.forEach (item => {
+    StringArr.push(item.toUpperCase());
+  });
+  return StringArr;
 };
 
-const speaker = (words, callback) => {
-  const newArr = [];
-  words.forEach(item => {
-    newArr.push(callback(item));
-  });
-  return newArr;
-};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -65,7 +64,19 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
 
+const greeting = (word) => {
+  const stringWord = word.toUpperCase() + "!";
+  return stringWord;
+};
 
+const speaker = (words, callback) => {
+  const newArr = [];
+
+  words.forEach(item => {
+    newArr.push(callback(item));
+  });
+  return newArr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -202,3 +213,7 @@ xdescribe('Testing challenge 7', () => {
     expect(fizzbuzz(inputs).length).toStrictEqual(16);
   });
 });
+
+
+
+
