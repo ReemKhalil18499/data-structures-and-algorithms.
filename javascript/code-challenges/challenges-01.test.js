@@ -42,13 +42,17 @@ Write a function named `allUpperCase` that takes an array of strings, and return
 
 Use `forEach` to loop over the input array. The modified strings should each be added into a local array. Return that local array.
 ------------------------------------------------------------------------------------------------ */
+const greeting = (word) => {
+  const stringWord = word.toUpperCase() + "!";
+  return stringWord;
+};
 
-const allUpperCase = (arr) => {
-  const StringArr = [];
-  arr.forEach (item => {
-    StringArr.push(item.toUpperCase());
+const speaker = (words, callback) => {
+  const newArr = [];
+  words.forEach(item => {
+    newArr.push(callback(item));
   });
-  return StringArr;
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -78,14 +82,19 @@ Within the addNumbers function, invoke the callback function as many times as ne
 
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
-
+const stringArray = [];
 const addValues = (arr, value) => {
-  // Solution code here...
+  stringArray = arr;
+  stringArray.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
+  for (const i = 0; i < times; i++) {
+    callback(arr, num);
+  }
+  return stringArray;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 
@@ -104,9 +113,16 @@ The inventory is formatted like this:
 
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
-
 const createList = (availableItems) => {
-  // Solution code here...
+  const newArr = [];
+  console.log(newArr);
+  availableItems.forEach((item) => {
+    if (item.available) {
+      newArr.push(item.name);
+      console.log(newArr);
+    };
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
