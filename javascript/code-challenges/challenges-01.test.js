@@ -93,17 +93,16 @@ Within the addNumbers function, invoke the callback function as many times as ne
 
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
-const stringArray = [];
-const addValues = (arr, value) => {
-  stringArray = arr;
-  stringArray.push(value);
-};
 
-const addNumbers = (num, arr, times, callback) => {
-  for (const i = 0; i < times; i++) {
-    callback(arr, num);
+// TA HELPED ME AT THIS CHALLENGE 
+const addValues = (arr, value) => {
+  arr.push(value);
+};
+const addNumbers = (numbers, arr, times, callback) => {
+  for (let i = 1; i <= times; i++) {
+    callback(arr, numbers)
   }
-  return stringArray;
+  return arr;
 };
 
 
