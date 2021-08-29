@@ -1,3 +1,5 @@
+
+
 'use strict';
 
 /* ------------------------------------------------------------------------------------------------
@@ -51,6 +53,7 @@ const allUpperCase = (arr) => {
   return StringArr;
 };
 
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
 
@@ -61,7 +64,19 @@ Then, write a function named `speaker` that takes in an array of strings and a c
 Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
 ------------------------------------------------------------------------------------------------ */
 
+const greeting = (word) => {
+  const stringWord = word.toUpperCase() + "!";
+  return stringWord;
+};
 
+const speaker = (words, callback) => {
+  const newArr = [];
+
+  words.forEach(item => {
+    newArr.push(callback(item));
+  });
+  return newArr;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -79,13 +94,17 @@ Within the addNumbers function, invoke the callback function as many times as ne
 Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
+// TA HELPED ME AT THIS CHALLENGE 
 const addValues = (arr, value) => {
-  // Solution code here...
+  arr.push(value);
+};
+const addNumbers = (numbers, arr, times, callback) => {
+  for (let i = 1; i <= times; i++) {
+    callback(arr, numbers)
+  }
+  return arr;
 };
 
-const addNumbers = (num, arr, times, callback) => {
-  // Solution code here...
-};
 
 /* ------------------------------------------------------------------------------------------------
 
@@ -104,9 +123,16 @@ The inventory is formatted like this:
 
 This function should use forEach to populate your grocery list based on the store's inventory. If the item is available, add it to your list. Return the final list.
 ------------------------------------------------------------------------------------------------ */
-
 const createList = (availableItems) => {
-  // Solution code here...
+  const newArr = [];
+  console.log(newArr);
+  availableItems.forEach((item) => {
+    if (item.available) {
+      newArr.push(item.name);
+      console.log(newArr);
+    };
+  });
+  return newArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -186,3 +212,7 @@ xdescribe('Testing challenge 7', () => {
     expect(fizzbuzz(inputs).length).toStrictEqual(16);
   });
 });
+
+
+
+
