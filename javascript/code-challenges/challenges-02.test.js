@@ -23,14 +23,15 @@ CHALLENGE 2
 Write a function named addOne that, given an array of numbers, uses map to return a new array with each value simply incremented by 1. 
 ------------------------------------------------------------------------------------------------ */
 
-const addOne = (arr) => {
 
-  const NumArr = arr.map(item => {
-    return item + 1;
+// i received help from some researches (w3schools,google)
+let newArr;
+const addOne = (arr) => {
+  let newArr = arr.map(element => {
+    return (element + 1);
   });
-  return NumArr;
+  return newArr;
 };
-const NumArr;
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -87,14 +88,17 @@ CHALLENGE 6
 Write a function named mapTwoToThe that produces the same output as your forLoopTwoToThe function from challenge 4 and your forEachTwoToThe function from challenge 5, but uses map instead of a for loop or forEach.
 ------------------------------------------------------------------------------------------------ */
 
+// i received helped from some researches (w3schools,google)
+let mapTwoToTheArr =[];
 const mapTwoToThe = (arr) => {
-  const Arr=arr.map(item => {
-    const New =Math.pow(2, item);
-    return New;
+  let mapTwoToTheArr = arr.map(element => {
+    let newElement = Math.pow(2, element);
+    return (newElement);
   });
-  return Arr;
+  return mapTwoToTheArr;
 };
-const Arr=[];
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
