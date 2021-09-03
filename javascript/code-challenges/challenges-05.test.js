@@ -19,7 +19,7 @@ const toLastNames = people => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
-
+ 
 Write a function named addValues that, given an array of numbers as input, uses reduce to add the values in the array.
 
 ------------------------------------------------------------------------------------------------ */
@@ -116,10 +116,8 @@ let starWarsData = [{
 }];
 
 const returnNames = (arr) => {
-  let summ = arr.reduce((accumulator, values) => 
-  { accumulator.push(values.name)
-  return accumulator
-  },[]);
+  let summ = arr.reduce((accumulator, values) => {accumulator.push(values.name)
+  return accumulator},[]);
   return summ;
 };
 
@@ -135,7 +133,8 @@ Note: You must use reduce for this challenge. You may not use the built-in .reve
 const reversedString = (str) => {
   let Arr = [...str];
   let summ = Arr.reduce((accumulator, values) => values + accumulator , '');
-  return summ
+  return summ;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
