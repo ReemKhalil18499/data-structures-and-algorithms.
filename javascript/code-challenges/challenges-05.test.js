@@ -19,7 +19,7 @@ const toLastNames = people => {
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
-
+ 
 Write a function named addValues that, given an array of numbers as input, uses reduce to add the values in the array.
 
 ------------------------------------------------------------------------------------------------ */
